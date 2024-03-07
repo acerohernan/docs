@@ -112,21 +112,27 @@ export const Toolbar: React.FC<Props> = ({ editor }) => {
   if (!editor) return;
 
   return (
-    <div className="mx-4 bg-[#EDF2FA] rounded-2xl overflow-x-auto xs:flex xs:justify-center">
-      <div className="p-2 flex gap-1">
-        {history.map((icon) => (
-          <ToolbarButton button={icon} editor={editor} key={`toolbar-icon-${icon.name}`} />
-        ))}
-        <Separator orientation="vertical" className="mx-1 h-auto bg-gray-300" />
-        {decorations.map((icon) => (
-          <ToolbarButton button={icon} editor={editor} key={`toolbar-icon-${icon.name}`} />
-        ))}
-        <Separator orientation="vertical" className="mx-1 h-auto bg-gray-300" />
-        {blocks.map((icon) => (
-          <ToolbarButton button={icon} editor={editor} key={`toolbar-icon-${icon.name}`} />
-        ))}
+    <>
+      <div className="px-2 fixed w-full z-10">
+        <div className="bg-[#EDF2FA] rounded-2xl overflow-x-auto xs:flex xs:justify-center">
+          <div className="p-2 flex gap-1">
+            {history.map((icon) => (
+              <ToolbarButton button={icon} editor={editor} key={`toolbar-icon-${icon.name}`} />
+            ))}
+            <Separator orientation="vertical" className="mx-1 h-auto bg-gray-300" />
+            {decorations.map((icon) => (
+              <ToolbarButton button={icon} editor={editor} key={`toolbar-icon-${icon.name}`} />
+            ))}
+            <Separator orientation="vertical" className="mx-1 h-auto bg-gray-300" />
+            {blocks.map((icon) => (
+              <ToolbarButton button={icon} editor={editor} key={`toolbar-icon-${icon.name}`} />
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
+      {/* Div to save space for fixed element */}
+      <div className="h-[42px] w-full" />
+    </>
   );
 };
 

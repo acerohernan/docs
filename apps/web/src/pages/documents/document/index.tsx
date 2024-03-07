@@ -3,8 +3,9 @@ import { Navbar } from "./navbar";
 
 const DocumentPage = () => {
   return (
-    <div className="bg-[#F9FBFD] min-h-[100vh] h-full">
+    <div className="bg-[#F9FBFD] min-h-[100vh] h-full relative">
       <Navbar />
+
       <main>
         <Editor />
       </main>

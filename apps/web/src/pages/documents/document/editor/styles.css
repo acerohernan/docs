@@ -1,3 +1,7 @@
+.tiptap {
+  z-index: 1;
+}
+
 .tiptap:focus {
   border: none;
   outline: none;
