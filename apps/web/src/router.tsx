@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 
-import HomePage from "./pages/home";
+import DocumentListPage from "./pages/documents/list";
+import DocumentPage from "./pages/documents/document";
 
 import { Provider } from "./provider";
 
@@ -10,7 +11,11 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <HomePage />,
+        element: <DocumentListPage />,
+      },
+      {
+        path: "/document/:docId",
+        element: <DocumentPage />,
       },
     ],
   },
