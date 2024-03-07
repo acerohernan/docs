@@ -1,0 +1,21 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "plugins": ["jest"],
+  "extends": ["standard-with-typescript", "plugin:prettier/recommended"],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "rules": {
+    "@typescript-eslint/semi": 0,
+    "@typescript-eslint/restrict-template-expressions": 0,
+    "@typescript-eslint/strict-boolean-expressions": 0,
+    "@typescript-eslint/no-confusing-void-expression": 0,
+    "@typescript-eslint/no-misused-promises": 0,
+    "@typescript-eslint/no-unsafe-argument": 0,
+    "@typescript-eslint/quotes": 0
+  }
+}
