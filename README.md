@@ -1,5 +1,7 @@
 # Docs - Full-stack real-time document
 
+![Document page](docs/screenshoots/document-page.png)
+
 ## Overview
 
 Docs is an open source Google Docs clone, built with React.js and Vite in the frontend, Node.js and Express in the backend and AWS for deployment.
@@ -23,4 +25,6 @@ Comming soon...
 
 ## Screenshoots
 
-Comming soon...
+![Home page](docs/screenshoots/home-page.png)
+
+![Document page](docs/screenshoots/document-page.png)
