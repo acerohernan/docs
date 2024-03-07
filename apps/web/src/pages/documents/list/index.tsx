@@ -1,6 +1,6 @@
-import { Navbar } from "./components/navbar";
-import { RecentDocuments } from "./components/recent-documents";
-import { TemplateGallery } from "./components/template-gallery";
+import { Navbar } from "./navbar";
+import { RecentDocuments } from "./recent-documents";
+import { TemplateGallery } from "./template-gallery";
 
 const DocumentListPage = () => {
   return (
