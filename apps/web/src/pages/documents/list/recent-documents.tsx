@@ -5,11 +5,15 @@ export const RecentDocuments = () => {
     <div className="w-full max-w-[700px] mx-auto h-50 p-4 ">
       <span>Recent documents</span>
       <div className="mt-4 grid gap-2 flex-wrap xs:grid-cols-2 md:grid-cols-3">
-        {Array(1)
-          .fill(1)
-          .map(() => (
-            <DocumentCard />
-          ))}
+        {/* Public demo document */}
+        <DocumentCard
+          document={{
+            id: "demo",
+            title: "Demo document",
+            lastOpenedAt: Date.now(),
+          }}
+        />
+        {/* Private documents (comming soon...) */}
       </div>
     </div>
   );
