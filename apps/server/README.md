@@ -6,7 +6,7 @@
 - [x] Prettier
 - [x] Unit testing
 - [x] Logger
-- [ ] Type-safety for env variables
+- [x] Type-safety for env variables
 - [ ] Docker
 - [ ] OpenAPI Spec (Swagger)
 - [ ] Integration testing
