@@ -13,6 +13,7 @@
     "packages/*"
   ],
   "scripts": {
-    "web": "yarn workspace @docs/web"
+    "web": "yarn workspace @docs/web",
+    "server": "yarn workspace @docs/server"
   }
 }

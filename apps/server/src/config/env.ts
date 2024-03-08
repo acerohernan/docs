@@ -1,8 +1,8 @@
 import z from "zod";
 import { config } from "dotenv";
 
-import { logger } from "./logger";
-import { LOG_LEVEL } from "./types";
+import { logger } from "./logger.js";
+import { LOG_LEVEL } from "./types.js";
 
 config();
 

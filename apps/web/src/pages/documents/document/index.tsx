@@ -5,7 +5,6 @@ const DocumentPage = () => {
   return (
     <div className="bg-[#F9FBFD] min-h-[100vh] h-full relative">
       <Navbar />
-
       <main>
         <Editor />
       </main>
