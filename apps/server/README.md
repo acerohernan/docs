@@ -5,9 +5,9 @@
 - [x] Eslint
 - [x] Prettier
 - [x] Unit testing
-- [ ] Logger
-- [ ] Docker
+- [x] Logger
 - [ ] Type-safety for env variables
+- [ ] Docker
 - [ ] OpenAPI Spec (Swagger)
 - [ ] Integration testing
 - [ ] E2E testing
