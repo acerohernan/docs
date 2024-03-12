@@ -7,7 +7,7 @@
 - [x] Unit testing
 - [x] Logger
 - [x] Type-safety for env variables
-- [ ] Docker
+- [x] Docker
 - [ ] OpenAPI Spec (Swagger)
 - [ ] Integration testing
 - [ ] E2E testing
