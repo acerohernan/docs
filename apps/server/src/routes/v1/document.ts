@@ -7,7 +7,7 @@ import { getDocument } from "@/controllers/v1/document/index.js";
 export const documentRouter = PromiseRouter();
 
 /**
- *  GET /guest
- *  @descripton Get access token for guest
+ *  GET /document
+ *  @descripton get document and user information
  */
 documentRouter.get("/", authMiddleware, getDocument);
