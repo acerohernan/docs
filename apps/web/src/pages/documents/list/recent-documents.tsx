@@ -1,4 +1,4 @@
-import { DocumentCard } from "./document-card";
+import { DemoDocument } from "./demo-document";
 
 export const RecentDocuments = () => {
   return (
@@ -6,13 +6,7 @@ export const RecentDocuments = () => {
       <span>Recent documents</span>
       <div className="mt-4 grid gap-2 flex-wrap xs:grid-cols-2 md:grid-cols-3">
         {/* Public demo document */}
-        <DocumentCard
-          document={{
-            id: "demo",
-            title: "Demo document",
-            lastOpenedAt: Date.now(),
-          }}
-        />
+        <DemoDocument />
         {/* Private documents (comming soon...) */}
       </div>
     </div>
