@@ -8,9 +8,9 @@ import expressWebsockets from "express-ws";
 import { env } from "./config/env.js";
 import { logger } from "./config/logger.js";
 
-import { hocuspocus } from "./lib/hocuspocus.js";
-
 import { router } from "./routes/index.js";
+
+import { hocuspocus } from "./lib/hocuspocus.js";
 
 export class Server {
   app: expressWebsockets.Application;
@@ -33,15 +33,20 @@ export class Server {
       morgan(":method :url :status :res[content-length] - :response-time ms"),
     );
 
-    // http routes
-    app.use(router);
+    // health check
+    /**
+     *  GET /
+     *  @descripton Health check route
+     */
+    app.get("/", (_, res) => res.sendStatus(200));
 
-    // websocket route
-    app.ws("/collaboration", (websocket, request) =>
+    // api routes
+    app.use("/api", router);
+
+    // websockets route
+    app.ws("/ws", (websocket, request) =>
       hocuspocus.handleConnection(websocket, request),
     );
-
-    app.get("/v1/", (_, res) => res.sendStatus(200));
 
     this.app = app;
   }
