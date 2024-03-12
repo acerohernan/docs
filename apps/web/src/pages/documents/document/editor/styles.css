@@ -61,3 +61,52 @@
   border-top: 2px solid rgba(13, 13, 13, 0.1);
   margin: 2rem 0;
 }
+
+.collaboration-cursor__caret {
+  border-left: 1px solid #0d0d0d;
+  border-right: 1px solid #0d0d0d;
+  margin-left: -1px;
+  margin-right: -1px;
+  pointer-events: none;
+  position: relative;
+  word-break: normal;
+}
+
+.collaboration-cursor__label {
+  border-radius: 3px 3px 3px 0;
+  color: #0d0d0d;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  left: -1px;
+  line-height: normal;
+  padding: 0.1rem 0.3rem;
+  position: absolute;
+  top: -1.4em;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.tiptap h1 {
+  font-size: 1.875rem;
+}
+
+.tiptap h2 {
+  font-size: 1.5rem;
+}
+
+.tiptap h3 {
+  font-size: 1.25rem;
+}
+
+.tiptap h4 {
+  font-size: 1rem;
+}
+
+.tiptap h5 {
+  font-size: 0.75rem;
+}
+
+.tiptap h6 {
+  font-size: 0.5rem;
+}
