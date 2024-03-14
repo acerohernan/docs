@@ -1,3 +1,4 @@
+import { toast } from "sonner";
 import { PlusIcon } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
@@ -8,7 +9,14 @@ export const TemplateGallery = () => {
       <div className="max-w-[700px] mx-auto p-4 py-5">
         <span>Start a new document</span>
         <div className="mt-4">
-          <button className="text-start">
+          <button
+            className="text-start"
+            onClick={() =>
+              toast("Comming soon!", {
+                description: "Create new document will be avaliable in the next version of the project. Stay tuned!",
+              })
+            }
+          >
             <Card className="w-[150px] h-[200px] transition-all hover:border-black flex items-center justify-center">
               <PlusIcon className="w-12 h-12" />
             </Card>
