@@ -5,7 +5,11 @@ import type { IDocument } from "@/models/document.js";
 
 import type { AuthMiddlewareLocals } from "@/middleware/auth.js";
 
-import { GetDocumentSchema, type IGetDocumentResponse } from "./schemas.js";
+import {
+  GetDocumentSchema,
+  type IGetDemoDocumentResponse,
+  type IGetDocumentResponse,
+} from "./schemas.js";
 
 export async function getDocument(
   req: Request,
@@ -37,4 +41,17 @@ export async function getDocument(
   };
 
   res.send({ document, user });
+}
+
+export async function getDemoDocument(
+  req: Request,
+  res: Response<IGetDemoDocumentResponse, AuthMiddlewareLocals>,
+): Promise<void> {
+  const document: IDocument = {
+    id: "demo",
+    title: "Demo document",
+    lastOpenedAt: Date.now(),
+  };
+
+  res.send({ document });
 }
