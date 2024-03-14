@@ -1,6 +1,6 @@
 # Docs - Full-stack real-time document
 
-![Document page](docs/screenshoots/document-page.png)
+![Document page in real time](docs/screenshoots/document-page-realtime.png)
 
 ## Overview
 
@@ -28,3 +28,7 @@ Comming soon...
 ![Home page](docs/screenshoots/home-page.png)
 
 ![Document page](docs/screenshoots/document-page.png)
+
+![Demo document modal](docs/screenshoots/demo-document-modal.png)
+
+![Document page in real time](docs/screenshoots/document-page-realtime.png)
