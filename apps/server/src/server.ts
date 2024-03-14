@@ -12,6 +12,8 @@ import { router } from "./routes/index.js";
 
 import { hocuspocus } from "./lib/hocuspocus.js";
 
+import { AppDataSource } from "./typeorm/data-source.js";
+
 export class Server {
   app: expressWebsockets.Application;
   httpServer?: http.Server;
@@ -51,7 +53,11 @@ export class Server {
     this.app = app;
   }
 
-  start(): void {
+  async start(): Promise<void> {
+    // initialize typeorm
+    await AppDataSource.initialize();
+    logger.info(`Database connected!`);
+
     this.httpServer = this.app.listen(env.PORT, () => {
       logger.info(
         `Listening on http://localhost:${env.PORT} in <${env.NODE_ENV}> environment and with <${env.LOG_LEVEL}> log level`,
@@ -59,9 +65,15 @@ export class Server {
     });
   }
 
-  stop(): void {
-    if (!this.httpServer) return;
+  async stop(): Promise<void> {
+    // close http server
+    if (this.httpServer) {
+      this.httpServer.close();
+    }
 
-    this.httpServer.close();
+    // close typeorm if connected
+    if (AppDataSource.isInitialized) {
+      await AppDataSource.destroy();
+    }
   }
 }
