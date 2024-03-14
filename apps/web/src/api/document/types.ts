@@ -8,3 +8,7 @@ export interface IGetDocumentResponse {
   user: IUser;
   document: IDocument;
 }
+
+export interface IGetDemoDocumentResponse {
+  document: IDocument;
+}
