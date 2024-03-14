@@ -1,8 +1,8 @@
 import { NotebookIcon } from "lucide-react";
 
-import { Card } from "@/components/ui/card";
+import type { IDocument } from "@/api/types";
 
-import type { IDocument } from "@/types/document";
+import { Card } from "@/components/ui/card";
 
 interface Props {
   document: IDocument;
@@ -11,10 +11,7 @@ interface Props {
 export const DocumentCard: React.FC<Props> = ({ document: { title, lastOpenedAt } }) => {
   return (
     <Card className="flex flex-col w-full h-[340px] transition-all hover:border-black">
-      <div
-        className="w-full flex-1 h-[340px]"
-        style={{ borderTopRightRadius: "inherit", borderTopLeftRadius: "inherit" }}
-      />
+      <div className="w-full flex-1" style={{ borderTopRightRadius: "inherit", borderTopLeftRadius: "inherit" }} />
       <div className="p-2 px-4 border-t">
         <span className="line-clamp-1">{title}</span>
         <div className="flex items-center justify-between">

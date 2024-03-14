@@ -1,60 +1,20 @@
-import { useCallback, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-import { getAccessToken } from "@/lib/token";
+import { useDemoDocument } from "@/hooks/query/useDemoDocument";
 
-import { useAuthContext } from "@/context/auth";
-
-import { Dialog } from "@/components/ui/dialog";
-
-import { IGetGuestTokenParams } from "@/api/auth/types";
-
-import { GuestDialog } from "./guest-dialog";
 import { DocumentCard } from "./document-card";
+import { DocumentCardSkeleton } from "./document-card-skeleton";
 
 export const DemoDocument = () => {
-  const navigate = useNavigate();
-  const token = getAccessToken();
-  const [open, setOpen] = useState(false);
-  const { getGuestToken } = useAuthContext();
+  const { data, isLoading } = useDemoDocument();
 
-  const enterDemoDocument = () => {
-    if (!token) {
-      setOpen(true);
-      return;
-    }
+  if (isLoading) return <DocumentCardSkeleton />;
 
-    navigate("/document/demo");
-  };
-
-  const guestDialogAction = useCallback(
-    async (params: IGetGuestTokenParams) => {
-      const success = await getGuestToken(params);
-
-      if (!success) {
-        alert("something went wrong");
-        return;
-      }
-
-      navigate("/document/demo");
-    },
-    [getGuestToken, navigate],
-  );
+  if (!data) return null;
 
   return (
-    <>
-      <button className="text-start" onClick={enterDemoDocument}>
-        <DocumentCard
-          document={{
-            id: "demo",
-            title: "Demo document",
-            lastOpenedAt: Date.now(),
-          }}
-        />
-      </button>
-      <Dialog open={open} onOpenChange={setOpen}>
-        <GuestDialog action={guestDialogAction} cancel={() => setOpen(false)} />
-      </Dialog>
-    </>
+    <Link to="/document/demo">
+      <DocumentCard document={data.document} />
+    </Link>
   );
 };

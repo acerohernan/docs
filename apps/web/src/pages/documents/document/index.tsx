@@ -11,7 +11,7 @@ import { Editor } from "./editor";
 const DocumentPage = () => {
   const { docId } = useParams();
   const navigate = useNavigate();
-  const { data: document, isError } = useDocument(docId ?? "");
+  const { data, isError } = useDocument(docId ?? "");
 
   useEffect(() => {
     if (!isError || !navigate) return;
@@ -46,8 +46,8 @@ const DocumentPage = () => {
 
   return (
     <div className="bg-[#F9FBFD] min-h-[100vh] h-full relative">
-      <Navbar />
-      <main>{document ? <Editor /> : <EditorSkeleton />}</main>
+      <Navbar document={data ? data.document : null} />
+      <main>{data ? <Editor /> : <EditorSkeleton />}</main>
     </div>
   );
 };
