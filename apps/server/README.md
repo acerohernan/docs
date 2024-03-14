@@ -8,6 +8,7 @@
 - [x] Logger
 - [x] Type-safety for env variables
 - [x] Docker
+- [x] TypeORM and PostgreSQL
 - [ ] OpenAPI Spec (Swagger)
 - [ ] Integration testing
 - [ ] E2E testing
@@ -36,3 +37,9 @@
 |   +-- integration // integration tests for external services
 +--
 ```
+
+# TODO:
+
+- Create schema with TypeORM
+- Save documents in postgres
+- Delete auth for demo document
