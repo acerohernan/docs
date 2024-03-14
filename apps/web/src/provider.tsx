@@ -12,7 +12,7 @@ export const Provider = () => {
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
         <Outlet />
-        <Toaster />
+        <Toaster visibleToasts={1} />
       </AuthProvider>
     </QueryClientProvider>
   );
