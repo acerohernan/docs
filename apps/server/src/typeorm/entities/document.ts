@@ -16,6 +16,6 @@ export class Document {
   @Column("varchar")
   name!: string;
 
-  @Column("bytea")
-  data!: Buffer;
+  @Column("bytea", { nullable: true })
+  data!: Buffer | null;
 }

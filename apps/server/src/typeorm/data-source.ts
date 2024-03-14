@@ -4,7 +4,7 @@ import path from "path";
 import { DataSource } from "typeorm/index.js";
 import { fileURLToPath } from "url";
 
-import { env } from "@/config/env.js";
+import { env } from "../config/env.js";
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const __dirname = path.dirname(fileURLToPath(import.meta.url));

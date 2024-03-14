@@ -36,7 +36,7 @@ export const hocuspocus = Server.configure({
           if (!document) {
             document = new Document();
             document.name = name;
-            document.data = Buffer.alloc(0);
+            document.data = null;
             await DocumentRepository.save(document);
             logger.debug("document created in db", { name });
           }
