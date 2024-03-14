@@ -1,11 +1,11 @@
 import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 
-import DocumentListPage from "./pages/documents/list";
-
 import { Provider } from "./provider";
 
-const DocumentPage = lazy(() => import("./pages/documents/document"));
+const NotFoundPage = lazy(() => import("./pages/not-found"));
+const DocumentListPage = lazy(() => import("./pages/documents/list"));
+const DemoDocumentPage = lazy(() => import("./pages/documents/demo"));
 
 export const router = createBrowserRouter([
   {
@@ -16,8 +16,12 @@ export const router = createBrowserRouter([
         element: <DocumentListPage />,
       },
       {
-        path: "/document/:docId",
-        element: <DocumentPage />,
+        path: "/document/demo",
+        element: <DemoDocumentPage />,
+      },
+      {
+        path: "*",
+        element: <NotFoundPage />,
       },
     ],
   },
