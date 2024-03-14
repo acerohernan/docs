@@ -4,24 +4,21 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { IGetGuestTokenParams } from "@/api/auth/types";
+
+import { IDemoUser } from "@/lib/demo";
+
+import { getRandomColor } from "../document/editor/utils";
 
 interface Props {
-  action: (params: IGetGuestTokenParams) => Promise<void>;
+  action: (user: IDemoUser) => void;
   cancel: () => void;
 }
 
 export const GuestDialog: React.FC<Props> = ({ action, cancel }) => {
   const [userName, setUserName] = useState("");
-  const [loading, setLoading] = useState(false);
 
-  const onAction = async () => {
-    setLoading(true);
-    try {
-      await action({ userName });
-    } finally {
-      setLoading(false);
-    }
+  const onAction = () => {
+    action({ name: userName, color: getRandomColor() });
   };
 
   return (
@@ -40,7 +37,7 @@ export const GuestDialog: React.FC<Props> = ({ action, cancel }) => {
         <Button variant="outline" onClick={cancel}>
           Cancel
         </Button>
-        <Button type="button" onClick={onAction} loading={loading}>
+        <Button type="button" onClick={onAction}>
           Continue
         </Button>
       </DialogFooter>
